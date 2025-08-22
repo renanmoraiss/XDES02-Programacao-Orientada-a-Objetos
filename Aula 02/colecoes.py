@@ -20,7 +20,7 @@ print()
 
 #Arrays x Listas (DIFERENÇA)
 #Arrays armazenam somente tipos simples como números, e todos os itens devem ser do mesmo tipo.
-#Lists armazenam qualquer dado de qualquer tipo.
+#Listas armazenam qualquer dado de qualquer tipo.
 
 futebolistas = ['Benzema', 'Antony']
 tam = len(futebolistas) #obtém o comprimento (número de itens)
