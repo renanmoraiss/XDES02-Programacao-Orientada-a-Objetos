@@ -9,6 +9,7 @@ print("Data de hoje: {}".format(data_atual))
 print("Dia: {}".format(data_atual.day))
 print("Mes: {}".format(data_atual.month))
 print("Ano: {}".format(data_atual.year))
+print()
 
 #timedelta é usado para definir um período de tempo.
 cem_dias = timedelta(days=100) #defino um período de tempo de 100 dias
@@ -16,6 +17,7 @@ print("Período de tempo: {}".format(cem_dias))
 passado = data_atual - cem_dias
 print("Hoje é: {}".format(data_atual))
 print("100 dias atrás é: {}".format(passado))
+print()
 
 data_nascimento = input("Data de nascimento (dd/mm/yyyy): ") 
 #input devolve datas como strings, então é necessário converter:

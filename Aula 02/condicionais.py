@@ -6,6 +6,7 @@ if renda >= 1900:
 else:
     aliquota = 0
     print("Voce esta isento de pagar imposto")
+print()
 
 estado = 'SP'
 cupom_desconto = True #variável booleana
