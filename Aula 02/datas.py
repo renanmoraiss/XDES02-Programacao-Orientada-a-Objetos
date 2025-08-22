@@ -1,35 +1,26 @@
 from datetime import datetime, timedelta
+#datetime -> manipulação de datas.
 
-data_corrente = datetime.now()
-print("Dia de hoje: {}".format(data_corrente))
+data_atual = datetime.now() #pega a data de hoje.
+                            #a função now retorna um objeto datetime
+print("Data de hoje: {}".format(data_atual))
 
-print("Dia: {}".format(data_corrente.day))
-print("Mes: {}".format(data_corrente.month))
-print("Ano: {}".format(data_corrente.year))
+#funções para formatação de datas
+print("Dia: {}".format(data_atual.day))
+print("Mes: {}".format(data_atual.month))
+print("Ano: {}".format(data_atual.year))
 
-cem_dias = timedelta(days=100)
-dia_passado = data_corrente - cem_dias
-print("Um dia foi: {}".format(dia_passado))
+#timedelta é usado para definir um período de tempo.
+cem_dias = timedelta(days=100) #defino um período de tempo de 100 dias
+print("Período de tempo: {}".format(cem_dias))
+passado = data_atual - cem_dias
+print("Hoje é: {}".format(data_atual))
+print("100 dias atrás é: {}".format(passado))
 
-nasc_renan = input('Data de nascimento (dd/mm/yyy): ')
-data_nasc = datetime.strptime(nasc_renan, '%d/%m/%Y')
-print("Data de nascimento: {}".format(data_nasc))
-
-nasc_renan_dois = input('Data de nascimento (dd/mm/yyy): ')
-data_nasc_dois = datetime.strptime(nasc_renan_dois, '%d/%m/%Y')
-dia_nasc = data_nasc_dois.weekday()
-match (dia_nasc):
-    case 1:
-        print("Domingo")
-    case 2:
-        print("Terça")
-    case 3:
-        print("Quarta")
-    case 4:
-        print("Quinta")
-    case 5:
-        print("Sexta")
-    case 6:
-        print("Sábado")
-    case 7:
-        print("Segunda")
+data_nascimento = input("Data de nascimento (dd/mm/yyyy): ") 
+#input devolve datas como strings, então é necessário converter:
+data = datetime.strptime(data_nascimento, '%d/%m/%Y') #converte string para data
+print("Voce nasceu em {}".format(data))
+um_dia = timedelta(days=1)
+vespera_nascimento =  data - um_dia
+print("Véspera do nascimento: {}".format(vespera_nascimento))
