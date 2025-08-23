@@ -1,6 +1,6 @@
 x = input("Digite algo: ")
 type_of_x = type(x)
-print("{} é do tipo {}".format(x, type_of_x))
+print("{} é do type {}".format(x, type_of_x))
 print("Só tem espaços? {}".format(x.isspace()))
 print("É um número? {}".format(x.isnumeric()))
 print("É alfabético? {}".format(x.isalpha()))

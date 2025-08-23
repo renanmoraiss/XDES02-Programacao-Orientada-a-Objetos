@@ -1,7 +1,7 @@
 import math
 import random
 
-n1 = int(input("Digite um número: "))
+n1 = int(input("Número: "))
 raiz_n1 = math.sqrt(n1)
 print("A raiz quadrada de {} é {:.2f}".format(n1, raiz_n1))
 print("Arredondada para cima: {}".format(math.ceil(raiz_n1)))

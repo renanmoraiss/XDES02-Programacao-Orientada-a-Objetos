@@ -2,7 +2,7 @@ import math
 
 ang = int(input("Valor do angulo: "))
 rad = math.radians(ang)
-#
+
 sin = math.sin(rad)
 cos = math.cos(rad)
 tan = math.tan(rad)

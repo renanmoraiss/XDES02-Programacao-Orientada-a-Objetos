@@ -1,4 +1,4 @@
-m = float(input("Distancia em metros: "))
+m = float(input("Distancia (metros): "))
 mm = m * 1000
 cm = m * 100
 dm = m * 10

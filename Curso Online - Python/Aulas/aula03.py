@@ -8,4 +8,4 @@ n3 = input("Digite algo: ")
 if (n3.isnumeric()):
     print("{} é numérico".format(n3))
 else:
-    print("{} não é numérico".format(n3))
+    print("{} nn é numérico".format(n3))

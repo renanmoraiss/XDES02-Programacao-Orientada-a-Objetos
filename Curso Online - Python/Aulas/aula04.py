@@ -1,5 +1,5 @@
-n1 = int(input("Primeiro número: "))
-n2 = int(input("Segundo número: "))
+n1 = int(input("Primeiro nmr: "))
+n2 = int(input("Segundo nmr: "))
 soma = n1 + n2
 subtracao = n1 - n2
 produto = n1 * n2

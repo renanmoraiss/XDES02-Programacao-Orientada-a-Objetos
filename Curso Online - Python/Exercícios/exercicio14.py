@@ -1,4 +1,4 @@
-temp_celsius = float(input("Temperatura em °C: "))
+temp_celsius = float(input("Temp em °C: "))
 temp_fahrenheit = (temp_celsius * 1.8) + 32
 temp_kelvin = temp_celsius + 273.15
 print("{}°C corresponde a {}°F".format(temp_celsius, temp_fahrenheit ))

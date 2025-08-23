@@ -1,5 +1,5 @@
-n1 = float(input("Sua nota na N1: "))
-n2 = float(input("Sua nota na N2: "))
+n1 = float(input("N1: "))
+n2 = float(input("N2: "))
 MF = (n1 + n2) / 2
 if MF >= 6.0:
     print("Aluno aprovado com {:.2f} de média".format(MF))

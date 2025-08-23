@@ -1,4 +1,4 @@
-n = int(input("Digite um valor: "))
+n = int(input("Valor: "))
 print('-' * 8)
 print("Tabuada de {}:".format(n))
 for i in range(11):

@@ -1,4 +1,4 @@
-n = int(input("Digite um número: "))
+n = int(input("Número: "))
 dobro = n * 2
 triplo = n * 3
 raiz_quadrada = n **(1/2)
