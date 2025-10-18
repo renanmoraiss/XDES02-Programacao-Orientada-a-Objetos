@@ -90,7 +90,7 @@ class HexagonoRegular(formaGeo):
         print('Perimetro: {:.2f}'.format(self.perimetro()))
 
 if __name__ == "__main__":
-    ret = Retangulo('Retângulo', 20, 10)
+    ret = Retangulo('Retângulo', 10, 15)
     ret.printDados()
     circ = Circulo('Círculo', 10)
     circ.printDados()
