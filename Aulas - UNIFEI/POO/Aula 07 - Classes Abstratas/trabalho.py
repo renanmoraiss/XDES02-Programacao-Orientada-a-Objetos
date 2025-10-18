@@ -1,4 +1,4 @@
-#Trabalho da Aula 07 - Classes e Métodos Abstratos
+#Trabalho da Aula 07 - (03) Classes e Métodos Abstratos
 
 from abc import ABC, abstractmethod
 import math
