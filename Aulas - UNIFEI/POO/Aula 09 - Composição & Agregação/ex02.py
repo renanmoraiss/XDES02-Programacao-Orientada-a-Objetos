@@ -5,7 +5,7 @@ class Pessoa(ABC):
     def __init__(self, nome, email):
         self.__nome = nome
         self.__email = email
-    
+
     @property
     def nome(self):
         return self.__nome
@@ -18,102 +18,88 @@ class Pessoa(ABC):
     def descrever(self):
         pass
 
-class Instrutor(Pessoa):
-    def __init__(self, nome, email, especialidade):
+class Funcionario(Pessoa):
+    def __init__(self, nome, email, cargo):
         super().__init__(nome, email)
-        self.__especialidade = especialidade
+        self.__cargo = cargo
 
     @property
-    def especialidade(self):
-        return self.__especialidade
+    def cargo(self):
+        return self.__cargo
     
     def descrever(self):
-        print("{}, {}, {}".format(self.nome, self.email, self.__especialidade))
+        print("{}, {}, {}".format(self.nome, self.email, self.__cargo))
 
-class Aluno(Pessoa):
-    def __init__(self, nome, email, matricula):
+class Gerente(Pessoa):
+    def __init__(self, nome, email, setor):
         super().__init__(nome, email)
-        self.__matricula = matricula
-
+        self.__setor = setor
+    
     @property
-    def matricula(self):
-        return self.__matricula
+    def setor(self):
+        return self.__setor
     
     def descrever(self):
-        print("{}, {}, {}".format(self.nome, self.email, self.__matricula))
+        print("{}, {}, {}".format(self.nome, self.email, self.__setor))
 
-class Curso:
-    def __init__(self, titulo, instrutor):
+class Projeto:
+    def __init__(self, nome, gerente):
+        self.__nome = nome
+        self.__gerente = gerente
+        self.__listaTarefas = []
+
+    @property
+    def nome(self):
+        return self.__nome
+    
+    @property
+    def gerente(self):
+        return self.__gerente
+    
+    @property
+    def listaTarefas(self):
+        return self.__listaTarefas
+    
+    def adicionarTarefa(self, tarefa):
+        self.__listaTarefas.append(tarefa)
+
+    def descrever(self):
+        print("Projeto: {}".format(self.nome))
+        print("Gerente: {} (Setor: {})".format(self.gerente.nome, self.gerente.setor))
+        print("Tarefas:")
+        for tarefa in self.__listaTarefas:
+            print("- {}, (Responsável: {}, Duração: {} dias)".format(tarefa.titulo, tarefa.responsavel.nome, tarefa.duracao))
+
+
+class Tarefa:
+    def __init__(self, titulo, responsavel, duracao):
         self.__titulo = titulo
-        self.__instrutor = instrutor
-        self.__listaAlunos = []
-        self.__listaAulas = []
-
-    @property
-    def titulo(self):
-        return self.__titulo
-    
-    @property
-    def instrutor(self):
-        return self.__instrutor
-    
-    @property
-    def listaAlunos(self):
-        return self.__listaAlunos
-    
-    @property
-    def listaAulas(self):
-        return self.__listaAulas
-    
-    def adicionarAluno(self, aluno):
-        self.__listaAlunos.append(aluno)
-
-    def adicionarAula(self, aula):
-        self.__listaAulas.append(aula)
-
-    def exibirDetalhes(self):
-        print("Curso: {}".format(self.__titulo))
-        print("Instrutor: {} (Especialidade: {})".format(self.instrutor.nome, self.instrutor.especialidade))
-        print()
-        print("Alunos:")
-        for aluno in self.__listaAlunos:
-            print("- {} (Matrícula: {})".format(aluno.nome, aluno.matricula))
-        print()
-        print("Aulas:")
-        for aula in self.__listaAulas:
-            print("- {} ({} min)".format(aula.titulo, aula.duracao))
-
-class Aula:
-    def __init__(self, titulo, duracao):
-        self.__titulo = titulo
+        self.__responsavel = responsavel
         self.__duracao = duracao
-
+    
     @property
     def titulo(self):
         return self.__titulo
+    
+    @property
+    def responsavel(self):
+        return self.__responsavel
     
     @property
     def duracao(self):
         return self.__duracao
     
-    def exibirAula(self):
-        print("{}, {}".format(self.__titulo, self.__duracao))
+    def descrever(self):
+        print("{}, {}, {}".format(self.__titulo, self.__responsavel, self.__duracao))
 
 if __name__ == "__main__":
-    instrutor1 = Instrutor("Carlos", "carlos@curso.com", "Backend")
+    g1 = Gerente("Ana", "ana@empresa.com", "Tecnologia")
+    f1 = Funcionario("Renan", "renan@empresa.com", "Desenvolvedor")
+    f2 = Funcionario("Bruno", "bruno@empresa.com", "Designer")
 
-    aluno1 = Aluno("Renan", "renan@email.com", 1023)
-    aluno2 = Aluno("Maria", "maria@email.com", 1045)
-    aluno3 = Aluno("João", "joao@email.com", 1060)
+    p1 = Projeto("App Mindly", g1)
 
-    curso_python = Curso("Programação em Python", instrutor1)
+    p1.adicionarTarefa(Tarefa("Criar Protótipo", f2, 5))
+    p1.adicionarTarefa(Tarefa("Programar Backend", f1, 10))
 
-    curso_python.adicionarAluno(aluno1)
-    curso_python.adicionarAluno(aluno2)
-    curso_python.adicionarAluno(aluno3)
-
-    curso_python.adicionarAula(Aula("Introdução à Linguagem", 30))
-    curso_python.adicionarAula(Aula("Estruturas de Controle", 45))
-    curso_python.adicionarAula(Aula("Orientação a Objetos", 60))
-
-    curso_python.exibirDetalhes()
+    p1.descrever()
