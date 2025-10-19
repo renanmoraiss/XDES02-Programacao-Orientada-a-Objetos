@@ -1,3 +1,5 @@
+#Exemplo de Polimorfismo
+
 from abc import ABC, abstractmethod
 class Documento(ABC):
     def __init__(self, nome):
