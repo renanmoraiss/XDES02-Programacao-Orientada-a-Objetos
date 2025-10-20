@@ -111,8 +111,8 @@ if __name__ == "__main__":
     funcComissionado.adicionaVenda(200, 3, 2022, 200000) 
     funcComissionado.adicionaVenda(201, 3, 2022, 400000) 
     funcComissionado.adicionaVenda(202, 4, 2022, 500000) 
-    listaFunc = [funcContratado, funcComissionado] 
-    for func in listaFunc: 
+    listaFuncionarios = [funcContratado, funcComissionado] 
+    for func in listaFuncionarios: 
         print (func.getDados()) 
         print ("Renda no mês 3 de 2022: ") 
         print (func.calculaRenda(3, 2022))
