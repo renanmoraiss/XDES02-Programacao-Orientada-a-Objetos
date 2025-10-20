@@ -1,5 +1,3 @@
-#Matrícula:	2025015820
-
 from abc import ABC, abstractmethod
 
 class Funcionario(ABC):
