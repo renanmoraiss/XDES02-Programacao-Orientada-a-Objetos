@@ -66,13 +66,8 @@ class Controller():
         self.root = tk.Tk()
         self.root.geometry('300x100')
         self.listaClientes = []
-
-        # Cria a view passando referência da janela principal e
-        # de si próprio (controlador)
         self.view = View(self.root, self) 
-
         self.root.title("Exemplo MVC")
-        # Inicia o mainloop
         self.root.mainloop()
 
     def salvaHandler(self, event):
